@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cliente_lead" model="res.groups">
+        <field name="name">Ver Cliente en lead</field>
+        <field name="comment">cliente_lead</field>
+    </record>
+
+ 
+</odoo>
