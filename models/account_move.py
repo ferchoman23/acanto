@@ -34,7 +34,7 @@ class AccountMove(models.Model):
 
     def _post(self,soft=True):
         for factura in self:
-            if factura.fel_serie and factura.fel_numero_autorizacion and factura.journal_id.fel_tipo_dte:
+            if factura.fel_documento_certificado and factura.journal_id.fel_tipo_dte:
                 raise UserError(str('NO PUEDE VALIDAR FACTURA DE NUEVO POR QUE YA FUE CERTIFICADA UNA VEZ'))
 
             if factura.journal_id and factura.journal_id.fel_tipo_dte:
