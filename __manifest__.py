@@ -12,10 +12,11 @@
     'version': '0.1',
     'depends': ['crm','base','account'],
     'data': [
-        'views/crm_lead_views.xml',
-        'security/security.xml',  
+        #'views/crm_lead_views.xml',
+        'views/account_move_views.xml',
+        'security/security.xml',
     ],
-    'demo': [    
+    'demo': [
     ],
     'installable': True,
     'aplication' : False,
