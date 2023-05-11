@@ -9,15 +9,7 @@
           <field name="arch" type="xml">
               <group id="header_right_group" position="inside">
                   <field name="factura_cf" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-
               </group>
-              <field name="invoice_user_id" position="after">
-                  <field name="tipo_factura"/>
-                  <field name="fel_numero_abonos_fc"/>
-                  <field name="fel_fecha_vencimiento_fc"/>
-                  <field name="fel_monto_abonos_fc"/>
-                  <field name="fel_no_enviar_tel"/>
-              </field>
           </field>
       </record>
 
