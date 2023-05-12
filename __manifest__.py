@@ -10,7 +10,7 @@
     'website': "",
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['crm','base','account'],
+    'depends': ['crm','base','account','infilefel'],
     'data': [
         #'views/crm_lead_views.xml',
         'views/account_move_views.xml',
