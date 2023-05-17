@@ -15,7 +15,18 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     factura_cf = fields.Boolean(string='CF', copy=False, tracking=True)
+    fecha_receptionPago = fields.Date(
+        string='Fecha de recepcion'
+    )
 
+    fecha_pago = fields.Date(
+        string='Fecha de pago'
+    )
+
+    contraseia_pago = fields.Char (
+        string='Contraseña de pago'
+    )
+    
 # 4 1 , exportacion
     def fecha_hora_factura(self, fecha):
         fecha_convertida = datetime.datetime.strptime(str(fecha), '%Y-%m-%d').date().strftime('%Y-%m-%d')
@@ -31,7 +42,7 @@ class AccountMove(models.Model):
                 linea_sin_impuesto = True
 
         return linea_sin_impuesto
-    
+
     def obtener_numero_identificacion(self, partner_id):
         res = super(AccountMove, self).obtener_numero_identificacion(partner_id)
         for factura in self:

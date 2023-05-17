@@ -10,6 +10,14 @@
               <group id="header_right_group" position="inside">
                   <field name="factura_cf" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
               </group>
+              <page name="other_info" position = "after">
+                <page name="contra_pago" string="Contraseña de pago">
+                   <group>
+                      <field name="fecha_receptionPago"/>
+                      <field name="fecha_pago"/>
+                   </group>
+                 </page>
+              </page>
           </field>
       </record>
 
