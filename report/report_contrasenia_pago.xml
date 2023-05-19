@@ -7,167 +7,174 @@
            <t t-set="data_report_header_spacing" t-value="4"/>
             <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
               <div class="article">
-                  <div class="page">
-                    
-                        <style>
+                <div class="page">
 
-                        .body1{
-                        width: 100%;
-                        height: 50%;
+                      <style>
 
-                        }
+                      .body1{
+                      width: 100%;
+                      height: 50%;
 
-                        .body2{
-                        width: 100%;
-                        height: 50%;
+                      }
 
-                        }
+                      .body2{
+                      width: 100%;
+                      height: 50%;
+
+                      }
 
 
-                        .header{ 
-                          
-                          display:flex;
-                          
-                        }
-                        .encabezado{
-                         
-                          margin-right:5px;
-                         display:block;
-                         text-align:center;
+                      .header{
 
-                        }
+                        display:flex;
 
-                        .contrapago{
-                
-                         height:auto;
-                         padding-top:20px;
-                         float:right;
-                         text-align:center;
-                        }
+                      }
+                      .encabezado{
 
-                       .contrapago-content {  
-                                margin:auto;
-                                margin-top:1px;
-                                width:245px;
-                                height:100px;
-                                float:right;
-                                border-color: black;
-                                border-width: 1px;
-                                border-style: solid;
-                                text-align:center;
-                        .logo{
-                          float:left;
-                          
+                        margin-right:5px;
+                       display:block;
+                       text-align:center;
 
-                        } 
+                      }
 
-                        }
-                        .info1{
-                        padding-top:50px;
-                        width:100vw;
-                        height:auto;
+                      .contrapago{
+
+                       height:auto;
+                       padding-top:20px;
+                       float:right;
+                       text-align:center;
+                      }
+
+                     .contrapago-content {
+                              margin:auto;
+                              margin-top:1px;
+                              width:245px;
+                              height:100px;
+                              float:right;
+                              border-color: black;
+                              border-width: 1px;
+                              border-style: solid;
+                              text-align:center;
+                      .logo{
                         float:left;
-                            }
 
-                        .info2{ 
-                                padding-top: 100px;
-                                padding-left: 30px;
-                                height:100px;
-                                float:right;
-                               
-                         
-                        }
 
-                        .info2-titulo{
-                          padding-bottom:15px;
-                        }
-
-                        .sub{
-                                height:1px;
-                                border-color: black;
-                                border-style: solid;
-                        }
-
-                        .o{
-                          font-size: 12px;
-                            text-align: left; 
-                        }
-
-                        .label{
-                          padding-bottom: 100px;
-                        }
-                      
-                      .break{
-                             
-                                width: 100%;
-                                border-color: black;
-                                border-width: 1px;
-                                border-style: solid;
-                        
                       }
 
-                      .ob{
-                        margin-top: 70%;
-                        
                       }
-                     .ref{
-                      text-align: center;
-                      font-size: 12px;
+                      .info1{
+                      padding-top:50px;
+                      width:100vw;
+                      height:auto;
+                      float:left;
+                          }
 
-                     }
-                        </style>
-
-                      <body class ="body1" >
-
-                      <header class ="header">
-                            <div> 
-                            <img class="logo" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 25%;" />
-                           </div>
-                           <div class ="encabezado"> 
-                                <span class="">CONTRASEÑA DE PAGO</span>
-                                <div class ="encabezado">  
-                                   <span>ACANTO, S.A.</span>
-                                </div>
-
-                            </div>
-                      </header> 
-
-                      <div class ="contrapago">
-                         <h2>Contraseña No.</h2>
-                        <div class ="contrapago-content">
-                          <span class= "ref"  t-field="o.payment_reference"></span>
-                        </div> 
-                      </div> 
+                      .info2{
+                              padding-top: 100px;
+                              padding-left: 30px;
+                              height:100px;
+                              float:right;
 
 
-                     
-                    <div class = "info1">
-                        <span class = "label">Proveedor:</span>  <span  class = "o" t-field="o.partner_id.name"></span><br/><br/>
-                        <span class = "label">Direccion:</span>  <span  class = "o" t-field="o.partner_id.name"></span><br/><br/>
-                        <span class = "label">Condiciones de pago:</span>  <span  class = "o" t-field="o.invoice_payment_term_id.name"></span> <br/><br/>
-                        <span class = "label">Fecha factura:</span>  <span  class = "o" t-field="o.invoice_date"></span> <br/><br/>
-                        <span class = "label">Total:</span>  <span  class = "o" t-field="o.amount_residual"></span> <br/>
-                        
+                      }
+
+                      .info2-titulo{
+                        padding-bottom:15px;
+                      }
+
+                      .sub{
+                              height:1px;
+                              border-color: black;
+                              border-style: solid;
+                      }
+
+                      .o{
+                        font-size: 12px;
+                          text-align: left;
+                      }
+
+                      .label{
+                        padding-bottom: 100px;
+                      }
+
+                    .break{
+
+                              width: 100%;
+                              border-color: black;
+                              border-width: 1px;
+                              border-style: solid;
+
+                    }
+
+                    .ob{
+                      margin-top: 70%;
+
+                    }
+                   .ref{
+                    text-align: center;
+                    font-size: 12px;
+
+                   }
+                      </style>
+
+                    <body class="body1">
+
+                    <header class="header">
+                          <div>
+                          <img class="logo" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 25%;"/>
+                         </div>
+                         <div class="encabezado">
+                              <span class="">CONTRASEÑA DE PAGO</span>
+                              <div class="encabezado">
+                                 <span>ACANTO, S.A.</span>
+                              </div>
+
+                          </div>
+                    </header>
+
+                    <div class="contrapago">
+                       <h2>Contraseña No.</h2>
+                      <div class="contrapago-content">
+                        <span class="ref" t-field="o.name"/>
+                      </div>
                     </div>
-                       
-
-                    <div class = "info2">
-                        <span class = "label">Fecha de pago:</span>  <span  class = "o" t-field="o.fecha_pago"></span><br/><br/>
-                        <span class = "label">Fecha de recepcion:</span>  <span  class = "o" t-field="o.fecha_receptionPago"></span><br/>    
-                    </div> <br/>
 
 
-                   <div class ="ob">
 
-                    <section class ="break"></section> <br/>
+                  <div class="info1">
+                      <span class="label">Proveedor:</span>  <span class="o" t-field="o.partner_id.name"/><br/><br/>
+                      <span class="label">Direccion:</span>  <span class="o" t-field="o.partner_id.name"/><br/><br/>
+                      <span class="label">Condiciones de pago:</span>
+                      <t t-if="o.invoice_payment_term_id">
+                          <span class="o" t-field="o.invoice_payment_term_id.name"/>
+                      </t>
+                      <t t-else="">
+                        <span class="o" t-field="o.partner_id.property_supplier_payment_term_id.name"/>
+                      </t>
+                      <br/><br/>
+                      <span class="label">Fecha factura:</span>  <span class="o" t-field="o.invoice_date"/> <br/><br/>
+                      <span class="label">Total:</span>  <span class="o" t-field="o.amount_residual"/> <br/>
 
-                     <span>Observaciones:</span> <br/><br/><br/>
-
-                     <section class ="break"></section> <br/>
-                    </div>
-
-                  </body>
                   </div>
+
+
+                  <div class="info2">
+                      <span class="label">Fecha de pago:</span>  <span class="o" t-field="o.fecha_pago"/><br/><br/>
+                      <span class="label">Fecha de recepcion:</span>  <span class="o" t-field="o.fecha_receptionPago"/><br/>
+                  </div> <br/>
+
+
+                 <div class="ob">
+
+                  <section class="break"/> <br/>
+
+                   <span>Observaciones:</span> <br/><br/><br/>
+
+                   <section class="break"/> <br/>
+                  </div>
+
+                </body>
+                </div>
               </div>
          </t>
          </t>
