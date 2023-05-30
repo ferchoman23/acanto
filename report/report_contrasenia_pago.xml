@@ -160,12 +160,13 @@
                 <span class="label"><strong>FECHA FACTURA:</strong></span>
                 <span class="o" t-field="o.date_approve" /> <br />
                <span class="label"><strong>NUMERO FACTURA:</strong></span>
+
                <span t-if="o.origin">
-               <span t-set="origin_parts" t-value="o.origin.split('-')"/>
-               <t t-if="origin_parts">
-               <span t-esc="origin_parts[0]"/><br />
-               <span class="label"><strong>SERIE FACTURA:</strong></span>
-               <span t-esc="origin_parts[1]"/><br />
+               <t t-if="o.origin">
+                 <span t-set="origin_parts" t-value="o.origin.split('-')"/>
+                 <span t-esc="origin_parts[0]"/><br />
+                 <span class="label"><strong>SERIE FACTURA:</strong></span>
+                 <span t-esc="origin_parts[1]"/><br />
                </t>
                </span>
                 <span class="label"><strong>TOTAL FACTURA:</strong></span>

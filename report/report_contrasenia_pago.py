@@ -12,9 +12,13 @@ class ReportContraseiaPago(models.AbstractModel):
     def _get_report_values(self, docids, data=None):
         docs = self.env['purchase.order'].browse(docids)
         for doc in docs:
-            origin_parts = doc.origin.split('-')
-            part1 = origin_parts[0] if len(origin_parts) > 0 else ''
-            part2 = origin_parts[1] if len(origin_parts) > 1 else ''
+            if doc.origin:
+                origin_parts = doc.origin.split('-')
+                part1 = origin_parts[0] if len(origin_parts) > 0 else ''
+                part2 = origin_parts[1] if len(origin_parts) > 1 else ''
+            else:
+                part1 = ["",""]
+                part2 = ["",""]
 
         return {
             'doc_ids': docids,
