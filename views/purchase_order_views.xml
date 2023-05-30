@@ -10,6 +10,7 @@
                     <page name="contra_pago" string="Contraseña de pago">
                         <group>
                             <field name="fecha_receptionPago"/>
+                            <field name="fecha_pago"/>
                         </group>
                     </page>
                 </xpath>
