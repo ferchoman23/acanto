@@ -120,17 +120,11 @@ class ReportMetodoPago(models.AbstractModel):
 
 
     def a_letras(self,monto):
-        logging.warning('Ingreso???')
-        logging.warning(monto)
-        logging.warning(self.num_a_letras(monto))
         return self.num_a_letras(monto,False)
 
     @api.model
     def _get_report_values(self, docids, data=None):
         docs = self.env['account.payment'].browse(docids)
-
-        
-
         return {
             'doc_ids': docids,
             'doc_model': 'account.payment',

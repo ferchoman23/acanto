@@ -5,248 +5,232 @@
     <template id="acanto.metodo_pago_report">
       <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
-         <t t-set="data_report_margin_top" t-value="12"/>
-           <t t-set="data_report_header_spacing" t-value="4"/>
-            <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
-            <div class="page">
-              <style>
-                  .page{
-                    display: flex;
-                    justify-content: center;
-                     align-items: center;
-                    height: 100vh;
-                  }
-                  .cantidad{
-                  float:right;
-                  }
-                  .detalle{
-                   float:right;
-                  }
-
-                  .Datos-cheque{
-                      padding-top: 10rem;
-                  }
-
-                  .info{
-                  padding-top: 5rem;
-                  float: right;
-                  height: 50%;
-
-                  }
-
-                  .datos-pago{
-                    padding-top: 10rem;
-
-                  }
-                .margin{
-                          border-color: black;
-                          border-width: 1px;
-                          border-style: solid;
-                          text-align: center;
-
-                }
-
-
-                .margin2{
-                          border-color: black;
-                          border-width: 1px;
-                          border-style: solid;
-                          text-align: center;
-                          width: 50%;
-                }
-
-                .datopagotitulo{
-                   background-color: grey;
-                   color: white;
-                   width: 50%;
-                }
-
-                .Datos-cheque{
-                  padding-bottom: 5rem;
-                }
-
-
-                .factura{
-
-                  height: 500px;
-                  text-align: center;
-                }
-
-                .info-factura{
-                  padding-top:2rem;
-                  float: right;
-                  width: 50%;
-                  height: 100px;
-                }
-
-                .titulo{
-                   padding-top: 8rem;
-                    text-align: center;
-                  }
-
-                  .datopago{
-                  background-color: #D8D8D8;
-                  padding-bottom: 2rem;
-                   white: 100%;
-                   height: 185px;
-                  }
-
-                  .titulo-info{
-
-                    float:left;
-                  }
-
-                  .datos{
-                    background-color: white;
-                    margin-top: 2rem;
-                     height:35px;
-                     width:40%;
-                    border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                  }
-                  .datos2{
-                    background-color: white;
-                     margin-top: 0.2rem;
-                     height:35px;
-                     width:40%;
-                     border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                  }
-
-                  .datos3{
-                    background-color: white;
-                    float:right;
-                     height:35px;
-                     width:30%;
-                     border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                  }
-
-                   .datos4{
-                    background-color: white;
-                     margin-top: 0.2rem;
-                     height:35px;
-                     width:50%;
-                     border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                  }
-
-                   .datos5{
-                    background-color: white;
-                     height:100px;
-                     width:99.99%;
-                     border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                  }
-
-                  .des{
-                    margin-top:102px;
-                    height:200px;
-                    background-color: #D8D8D8;
-
-                  }
-
-
-                    .infoche{
-                    background-color: white;
-                     margin-top: 0.2rem;
-                     height:35px;
-                     width:33.33%;
-                     border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                      display:flex;
-                  }
-                  .infoche2{
-                    float:right;
-                    background-color: white;
-                     height:35px;
-                     width:40%;
-                     border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                      display:flex;
-                  }
-
-                  .infoche3{
-                    background-color: white;
-                     margin-top: 0.2rem;
-                     height:35px;
-                     width:50%;
-                     border-color: black;
-                      border-width: 1px;
-                      border-style: solid;
-                      display:flex;
-
-                      }
-              </style>
-
-              <div class="header">
-                <img class="logo" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 25%;"/>
+          <t t-set="data_report_margin_top" t-value="12"/>
+          <t t-set="data_report_header_spacing" t-value="4"/>
+          <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
+          <div class="page">
+            <style>
+              .page {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+              }
+              .cantidad {
+                float: right;
+              }
+              .detalle {
+                float: right;
+              }
+              .Datos-cheque {
+                padding-top: 10rem;
+              }
+              .info {
+                padding-top: 5rem;
+                float: right;
+                height: 50%;
+              }
+              .datos-pago {
+                padding-top: 10rem;
+              }
+              .margin {
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                text-align: center;
+              }
+              .margin2 {
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                text-align: center;
+                width: 50%;
+              }
+              .datopagotitulo {
+                background-color: grey;
+                color: white;
+                width: 50%;
+              }
+              .Datos-cheque {
+                padding-bottom: 5rem;
+              }
+              .factura {
+                height: 500px;
+                text-align: center;
+              }
+              .info-factura {
+                padding-top: 2rem;
+                float: right;
+                width: 50%;
+                height: 100px;
+              }
+              .titulo {
+                padding-top: 8rem;
+                text-align: center;
+              }
+              .datopago {
+                background-color: #D8D8D8;
+                padding-bottom: 2rem;
+                white: 100%;
+                height: 185px;
+              }
+              .titulo-info {
+                float: left;
+              }
+              .datos {
+                background-color: white;
+                margin-top: 2rem;
+                height: 35px;
+                width: 60%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                text-align: left;
+              }
+              .datos2 {
+                background-color: white;
+                margin-top: 0.2rem;
+                height: 35px;
+                width: 60%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                text-align: left;
+              }
+              .datos3 {
+                background-color: white;
+                float: right;
+                height: 35px;
+                width: 30%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                text-align: left;
+              }
+              .datos4 {
+                background-color: white;
+                margin-top: 0.2rem;
+                height: 35px;
+                width: 60%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                text-align: left;
+              }
+              .datos5 {
+                background-color: white;
+                height: 100px;
+                width: 99.99%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                text-align: left;
+              }
+              .des {
+                margin-top: 102px;
+                height: 200px;
+                background-color: #D8D8D8;
+              }
+              .infoche {
+                background-color: white;
+                margin-top: 0.2rem;
+                height: 35px;
+                width: 50%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                display: flex;
+                text-align: left;
+              }
+              .infoche2 {
+                float: right;
+                background-color: white;
+                height: 35px;
+                width: 40%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                display: flex;
+                text-align: left;
+              }
+              .infoche3 {
+                background-color: white;
+                margin-top: 0.2rem;
+                height: 35px;
+                width: 50%;
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+                display: flex;
+                text-align: left;
+              }
+              .footer {
+                font-size: 10px;
+                float: left;
+              }
+              .footer1 {
+                font-size: 10px;
+                float: center;
+              }
+              .footer2 {
+                font-size: 10px;
+                float: right;
+              }
+            </style>
+            <div class="header">
+              <img class="logo" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 25%;" />
+            </div>
+            <div class="factura">
+              <div class="info-factura">
+                <p><strong>Vaucher No:</strong> <t t-esc="o.name" /></p>
+                <p><strong>Fecha:</strong> <t t-esc="o.date" /></p>
               </div>
-
-              <div class="factura">
-                  <div class="info-factura">
-                    <p><strong>Vaucher No:</strong> <t t-esc="o.name"/></p>
-                    <p><strong>Fecha:</strong> <t t-esc="o.date"/></p>
-                  </div>
-
-                  <div class="titulo">
-                    <h3>Vaucher de pago</h3>
-                  </div>
-
-                  <div class="datopago">
-                        <h4 align="left">Datos del pago</h4>
-                    <div class="datos">
-                     <p><strong>Concepto:</strong> <t t-esc="o.descripcion"/></p>
-                    </div>
-
-                    <div class="datos2">
-                      <p><strong>Recibimos de:</strong> <t t-esc="o.company_id.name"/></p>
-                    </div>
-
-                    <div class="datos3">
-                        <p><strong>Cantidad:</strong> Q<t t-esc="o.amount"/></p>
-                    </div>
-
-                    <div class="datos4">
-                      <p><strong>Cantidad letras:</strong>  <t t-esc="a_letras(o.amount)"/> Quetzales</p>
-                    </div>
-
-                    <p align="left"><strong>Descrpcion y detalle del Proveedor</strong></p>
-
-                    <div class="datos5">
-                      <p><strong>Factura</strong> <t t-esc="o.ref"/></p>
-                    </div>
-                  </div>
-
-                  <div class="des">
-                    <h4 align="left">Datos del cheque</h4>
-                    <div class="infoche">
-                      <p><strong>Banco:</strong> <t t-esc="o.journal_id.bank_account_id.bank_id.name"/></p>
-                    </div>
-                    <div class="infoche2">
-                      <p><strong>Cuenta No.</strong> <t t-esc="o.journal_id.bank_account_id.acc_number"/></p>
-                    </div>
-                    <div class="infoche">
-                      <p><strong>Cheque / Transferencia</strong> <t t-esc="o.correlative_checkbook"/></p>
-                    </div>
-                    <div class="infoche2">
-                       <p><strong>Cantidad:</strong> <t t-esc="o.amount"/></p>
-                    </div>
-                    <div class="infoche">
-                        <p><strong>A la orden de: ACANTO.S.A.</strong></p>
-                    </div>
-
-                    <div class="infoche3">
-                        <p><strong>Cantidad letras:</strong> <t t-esc="a_letras(o.amount)"/> Quetzales</p>
-                    </div>
-                  </div>
+              <div class="titulo">
+                <h3>Vaucher de pago</h3>
+              </div>
+              <div class="datopago">
+                <h4 align="left">Datos del pago</h4>
+                <div class="datos">
+                  <p align="left"><strong>Concepto:</strong> Proveedor</p>
+                </div>
+                <div class="datos2">
+                  <p><strong>Recibimos de:</strong> <t t-esc="o.company_id.name" /></p>
+                </div>
+                <div class="datos3">
+                  <p><strong>Cantidad:</strong> Q<t t-esc="o.reconciled_bill_ids[0].amount_total" /></p>
+                </div>
+                <div class="datos4">
+                  <p><strong>La cantidad de:</strong> <t t-esc="a_letras(o.reconciled_bill_ids[0].amount_total)" /> Quetzales</p>
+                </div>
+                <p align="left"><strong>Descrpcion y detalle del Proveedor</strong></p>
+                <div class="datos5">
+                  <p><strong>Factura</strong> <t t-esc="o.ref" /></p>
+                </div>
+              </div>
+              <div class="des">
+                <h4 align="left">Datos del cheque</h4>
+                <div class="infoche">
+                  <p><strong>Banco:</strong> <t t-esc="o.journal_id.bank_account_id.bank_id.name" /></p>
+                </div>
+                <div class="infoche2">
+                  <p><strong>Cuenta No. </strong> <t t-esc="o.journal_id.bank_account_id.acc_number" /></p>
+                </div>
+                <div class="infoche">
+                  <p><strong> <t t-esc="o.tipo_pago" /> No: </strong> <!-- <t t-esc="o.code" /> --></p>
+                </div>
+                <div class="infoche2">
+                  <p><strong>Cantidad:</strong> Q<t t-esc="o.amount" /></p>
+                </div>
+                <div class="infoche">
+                  <p><strong>A la orden de: </strong> <t t-esc="o.partner_id.name" /></p>
+                </div>
+                <div class="infoche3">
+                  <p><strong>La cantidad de:</strong> <t t-esc="a_letras(o.amount)" /> Quetzales</p>
+                </div>
+              </div>
+              <span class="footer"><strong>Elaborado por: </strong><span t-field="request.env.user.name" /></span>
+              <span class="footer1"><strong>Autorizado por: </strong><span t-esc="o.autorizado_por" /></span>
+              <span class="footer2"><strong>Recibido por:</strong><span t-esc="o.recibido_por" /></span>
             </div>
           </div>
         </t>
