@@ -13,6 +13,9 @@
                 <xpath expr="//field[@name='partner_id']" position="attributes">
                         <attribute name="groups">acanto.cliente_lead</attribute>
                 </xpath>
+                <xpath expr="//button[@name='action_sale_quotations_new']" position="replace">
+                  <button string="Nuevo presupuesto" name="action_sale_quotations_new" type="object" class="oe_highlight" data-hotkey="q" title="Create new quotation" attrs="{'invisible': ['&amp;', ('probability', '=', 0), ('active', '=', False)]}"/>
+               </xpath>
                 <xpath expr="//page[@name='lead']" position="after">
                     <page string="Productos vendidos" name="productos_vendidos">
                         <group>
