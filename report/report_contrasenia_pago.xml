@@ -192,9 +192,9 @@
                 <span class="label2"><strong>TOTAL PAGO:</strong></span>
                 <span class="o" t-field="o.amount_total" /><br />
                 <span class="label2"><strong>DIA DE PAGO</strong></span>
-                <span class="o" t-field="o.dia_pago" /><br />
+                <span class="o" t-field="o.company_id.dia_pago"/><br/>
                 <span class="label2"><strong>HORARIO DE PAGO</strong></span>
-                <span class="o" t-field="o.horario_pago" />
+                <span class="o" t-field="o.company_id.horario_pago"/>
               </div>
 
               <div class="ob">
