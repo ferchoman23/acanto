@@ -10,7 +10,7 @@
                     <page name="contra_pago" string="Contraseña de pago">
                         <group>
                           <field name="fecha_receptionPago"/>
-                          <field name="observacion_pago"/>
+                          <field name="fecha_pago"/>
                           <field name="observacion_pago"/>
                           <!-- <field name="horario_pago"/> -->
                         </group>
