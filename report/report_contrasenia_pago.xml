@@ -28,7 +28,7 @@
                 width: 100%;
                 margin-top: 5rem;
                 text-align: center;
-                font-size: 10px;
+                font-size: 15px;
 
 
               }
@@ -79,18 +79,19 @@
               }
 
               .o {
-                font-size: 10px;
+                font-size: 15px;
                 text-align: left;
+                font-family: Arial, sans-serif;
               }
 
               .label {
                 padding-bottom: 100px;
-                font-size: 10px;
+                font-size: 15px;
               }
 
               .label2 {
                 padding-bottom: 100px;
-                font-size: 10px;
+                font-size: 15px;
               }
 
 
@@ -116,7 +117,7 @@
               }
 
               .footer{
-              font-size: 10px;
+              font-size: 13px;
               }
               .footer1{
               font-size: 10px;
@@ -124,7 +125,7 @@
 
               }
               .footer2{
-              font-size: 10px;
+              font-size: 13px;
               float:right
               }
             </style>
@@ -133,13 +134,13 @@
 
                   <header class="header">
                       <div class="logo" style="position: absolute; top: 0; left: 0; width: 15%;">
-                          <img t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 100%;" />
+                          <img t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 100%;"/>
                         </div>
 
                        <div class="contrapago">
                           <h2 style="font-size: 15px;"><strong>Contraseña No.</strong></h2>
                          <div class="contrapago-content">
-                            <span class="ref" t-field="o.name" />
+                            <span class="ref" t-field="o.name"/>
                          </div>
                        </div>
                   </header>
@@ -153,8 +154,8 @@
 
               <div class="info1">
                 <span class="label"><strong>PROVEEDOR:</strong></span>
-                <span class="o" t-field="o.partner_id.name" /><br />
-                <span class="label"><strong>DIRECCION:</strong></span><br />
+                <span class="o" t-field="o.partner_id.name"/><br/>
+                <span class="label"><strong>DIRECCION:</strong></span><br/>
                 <span class="label"><strong>CONDICIONES DE PAGO:</strong></span>
                 <!-- <t t-if="o.invoice_payment_term_id">
                   <span class="o" t-field="o.invoice_payment_term_id.name" /><span>  </span><strong>Dias</strong>
@@ -162,67 +163,66 @@
                 <t t-else="">
                   <span class="o" t-field="o.partner_id.property_supplier_payment_term_id.name" />
                 </t> -->
-                <br />
+                <br/>
                 <span class="label"><strong>FECHA FACTURA:</strong></span>
-                <span class="o" t-field="o.date_approve" /> <br />
+                <span class="o" t-field="o.date_approve"/> <br/>
                <span class="label"><strong>NUMERO FACTURA:</strong></span>
                <span t-if="o.origin">
                <span t-set="origin_parts" t-value="o.origin.split('-')"/>
                <t t-if="origin_parts">
-               <span t-esc="origin_parts[0]"/><br />
+               <span t-esc="origin_parts[0]"/><br/>
                <span class="label"><strong>SERIE FACTURA:</strong></span>
-               <span t-esc="origin_parts[1]"/><br />
+               <span t-esc="origin_parts[1]"/><br/>
                </t>
                </span>
                 <span class="label"><strong>TOTAL FACTURA:</strong></span>
-                <span class="o" t-field="o.amount_total" /> <br />
+                <span class="o" t-field="o.amount_total"/> <br/>
                 <span class="label"><strong>TOTAL PAGO:</strong></span>
-                <span class="o" t-field="o.amount_total" />
+                <span class="o" t-field="o.amount_total"/>
               </div>
 
               <div class="info2">
-                <div class ="titulo-info2">
+                <div class="titulo-info2">
                  <span><u>INFORMACION DEL PAGO</u></span>
-                </div><br />
-                <section class="break" /> <br />
+                </div><br/>
+                <section class="break"/> <br/>
                  <span class="label2"><strong>FECHA RECEPCION PAGO:</strong></span>
-                <span class="o" t-field="o.fecha_receptionPago" /><br />
+                <span class="o" t-field="o.fecha_receptionPago"/><br/>
                 <span class="label2"><strong>FECHA PAGO:</strong></span>
-                <span class="o" t-field="o.date_approve" /><br />
+                <span class="o" t-field="o.date_approve"/><br/>
                 <span class="label2"><strong>TOTAL PAGO:</strong></span>
-                <span class="o" t-field="o.amount_total" /><br />
+                <span class="o" t-field="o.amount_total"/><br/>
                 <span class="label2"><strong>DIA DE PAGO</strong></span>
-                <span class="o" t-field="o.company_id.dia_pago" /><br />
+                <span class="o" t-field="o.company_id.dia_pago"/><br/>
                 <span class="label2"><strong>HORARIO DE PAGO</strong></span>
-                <span class="o" t-field="o.company_id.horario_pago" />
+                <span class="o" t-field="o.company_id.horario_pago"/>
               </div>
 
               <div class="ob">
-                <section class="break" /> <br />
-                <span>Observaciones: <span t-esc="o.observacion_pago"/></span> <br /><br />
-                <section class="break" />
+                <section class="break"/> <br/>
+                <span>Observaciones: <span t-esc="o.observacion_pago"/></span> <br/><br/>
+                <section class="break"/>
                  <span class="footer" t-field="request.env.user.name"/>
-                 <span class="footer1"  ><strong>Fecha actual: </strong><span t-esc="time.strftime('%Y-%m-%d')"/></span>
+                 <span class="footer1"><strong>Fecha actual: </strong><span t-esc="time.strftime('%Y-%m-%d')"/></span>
 
               </div>
             </body>
 
 
              <body class="body1">
-
-                  <header class="header">
-                      <div class="logo" style="width: 15%;">
-                          <img t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 100%;" />
+                  
+                 <header class="header">
+                      <div class="logo">
+                          <img t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 100%;"/>
                         </div>
 
-                       <div class="contrapago">
+                       <div class="contrapago" style ="margin-top: -100px;">
                           <h2 style="font-size: 15px;"><strong>Contraseña No.</strong></h2>
                          <div class="contrapago-content">
-                            <span class="ref" t-field="o.name" />
+                            <span class="ref" t-field="o.name"/>
                          </div>
                        </div>
                   </header>
-
 
                 <div class="encabezado">
                   <span><strong>CONTRASEÑA DE PAGO</strong></span><br/>
@@ -232,8 +232,8 @@
 
               <div class="info1">
                 <span class="label"><strong>PROVEEDOR:</strong></span>
-                <span class="o" t-field="o.partner_id.name" /><br />
-                <span class="label"><strong>DIRECCION:</strong></span><br />
+                <span class="o" t-field="o.partner_id.name"/><br/>
+                <span class="label"><strong>DIRECCION:</strong></span><br/>
                 <span class="label"><strong>CONDICIONES DE PAGO:</strong></span>
                 <!-- <t t-if="o.invoice_payment_term_id">
                   <span class="o" t-field="o.invoice_payment_term_id.name" /><span>  </span><strong>Dias</strong>
@@ -241,47 +241,47 @@
                 <t t-else="">
                   <span class="o" t-field="o.partner_id.property_supplier_payment_term_id.name" />
                 </t> -->
-                <br />
+                <br/>
                 <span class="label"><strong>FECHA FACTURA:</strong></span>
-                <span class="o" t-field="o.date_approve" /> <br />
+                <span class="o" t-field="o.date_approve"/> <br/>
                <span class="label"><strong>NUMERO FACTURA:</strong></span>
                <span t-if="o.origin">
                <span t-set="origin_parts" t-value="o.origin.split('-')"/>
                <t t-if="origin_parts">
-               <span t-esc="origin_parts[0]"/><br />
+               <span t-esc="origin_parts[0]"/><br/>
                <span class="label"><strong>SERIE FACTURA:</strong></span>
-               <span t-esc="origin_parts[1]"/><br />
+               <span t-esc="origin_parts[1]"/><br/>
                </t>
                </span>
                 <span class="label"><strong>TOTAL FACTURA:</strong></span>
-                <span class="o" t-field="o.amount_total" /> <br />
+                <span class="o" t-field="o.amount_total"/> <br/>
                 <span class="label"><strong>TOTAL PAGO:</strong></span>
-                <span class="o" t-field="o.amount_total" />
+                <span class="o" t-field="o.amount_total"/>
               </div>
 
               <div class="info2">
-                <div class ="titulo-info2">
+                <div class="titulo-info2">
                  <span><u>INFORMACION DEL PAGO</u></span>
-                </div><br />
-                <section class="break" /> <br />
+                </div><br/>
+                <section class="break"/> <br/>
                  <span class="label2"><strong>FECHA RECEPCION PAGO:</strong></span>
-                <span class="o" t-field="o.fecha_receptionPago" /><br />
+                <span class="o" t-field="o.fecha_receptionPago"/><br/>
                 <span class="label2"><strong>FECHA PAGO:</strong></span>
-                <span class="o" t-field="o.date_approve" /><br />
+                <span class="o" t-field="o.date_approve"/><br/>
                 <span class="label2"><strong>TOTAL PAGO:</strong></span>
-                <span class="o" t-field="o.amount_total" /><br />
+                <span class="o" t-field="o.amount_total"/><br/>
                 <span class="label2"><strong>DIA DE PAGO</strong></span>
-                <span class="o" t-field="o.company_id.dia_pago" /><br />
+                <span class="o" t-field="o.company_id.dia_pago"/><br/>
                 <span class="label2"><strong>HORARIO DE PAGO</strong></span>
-                <span class="o" t-field="o.company_id.horario_pago" />
+                <span class="o" t-field="o.company_id.horario_pago"/>
               </div>
 
               <div class="ob">
-                <section class="break" /> <br />
-                <span>Observaciones: <span t-esc="o.observacion_pago"/></span> <br /><br />
-                <section class="break" />
+                <section class="break"/> <br/>
+                <span>Observaciones: <span t-esc="o.observacion_pago"/></span> <br/><br/>
+                <section class="break"/>
                  <span class="footer" t-field="request.env.user.name"/>
-                 <span class="footer1"  ><strong>Fecha actual: </strong><span t-esc="time.strftime('%Y-%m-%d')"/></span>
+                 <span class="footer1"><strong>Fecha actual: </strong><span t-esc="time.strftime('%Y-%m-%d')"/></span>
 
               </div>
             </body>
