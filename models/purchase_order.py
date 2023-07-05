@@ -24,3 +24,6 @@ class PurchaseOrder(models.Model):
     observacion_pago = fields.Char (
         string='Observaciones'
     )
+    fecha_factura = fields.Date(
+        String ='Fecha factura' 
+    )
