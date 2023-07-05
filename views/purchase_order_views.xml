@@ -12,6 +12,7 @@
                           <field name="fecha_receptionPago"/>
                           <field name="fecha_pago"/>
                           <field name="observacion_pago"/>
+                          <field name="fecha_factura"/>
                           <!-- <field name="horario_pago"/> -->
                         </group>
                     </page>
