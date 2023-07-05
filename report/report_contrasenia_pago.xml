@@ -165,7 +165,7 @@
                 </t> -->
                 <br/>
                 <span class="label"><strong>FECHA FACTURA:</strong></span>
-                <span class="o" t-field="o.date_approve"/> <br/>
+                <span class="o" t-field="o.fecha_factura"/> <br/>
                <span class="label"><strong>NUMERO FACTURA:</strong></span>
                <span t-if="o.origin">
                <span t-set="origin_parts" t-value="o.origin.split('-')"/>
@@ -186,10 +186,10 @@
                  <span><u>INFORMACION DEL PAGO</u></span>
                 </div><br/>
                 <section class="break"/> <br/>
-                 <span class="label2"><strong>FECHA RECEPCION PAGO:</strong></span>
+                 <span class="label2"><strong>FECHA RECEPCION:</strong></span>
                 <span class="o" t-field="o.fecha_receptionPago"/><br/>
                 <span class="label2"><strong>FECHA PAGO:</strong></span>
-                <span class="o" t-field="o.date_approve"/><br/>
+                <span class="o" t-field="o.fecha_pago"/><br/>
                 <span class="label2"><strong>TOTAL PAGO:</strong></span>
                 <span class="o" t-field="o.amount_total"/><br/>
                 <span class="label2"><strong>DIA DE PAGO</strong></span>
@@ -243,7 +243,7 @@
                 </t> -->
                 <br/>
                 <span class="label"><strong>FECHA FACTURA:</strong></span>
-                <span class="o" t-field="o.date_approve"/> <br/>
+                <span class="o" t-field="o.fecha_factura"/> <br/>
                <span class="label"><strong>NUMERO FACTURA:</strong></span>
                <span t-if="o.origin">
                <span t-set="origin_parts" t-value="o.origin.split('-')"/>
@@ -264,10 +264,10 @@
                  <span><u>INFORMACION DEL PAGO</u></span>
                 </div><br/>
                 <section class="break"/> <br/>
-                 <span class="label2"><strong>FECHA RECEPCION PAGO:</strong></span>
+                 <span class="label2"><strong>FECHA RECEPCION:</strong></span>
                 <span class="o" t-field="o.fecha_receptionPago"/><br/>
                 <span class="label2"><strong>FECHA PAGO:</strong></span>
-                <span class="o" t-field="o.date_approve"/><br/>
+                <span class="o" t-field="o.fecha_pago"/><br/>
                 <span class="label2"><strong>TOTAL PAGO:</strong></span>
                 <span class="o" t-field="o.amount_total"/><br/>
                 <span class="label2"><strong>DIA DE PAGO</strong></span>
