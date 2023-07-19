@@ -140,7 +140,7 @@
                        <div class="contrapago">
                           <h2 style="font-size: 15px;"><strong>Contraseña No.</strong></h2>
                          <div class="contrapago-content">
-                            <span class="ref" t-field="o.name"/>
+                            <span style ="font-size: 25px;" class="ref" t-field="o.name"/>
                          </div>
                        </div>
                   </header>
@@ -155,14 +155,14 @@
               <div class="info1">
                 <span class="label"><strong>PROVEEDOR:</strong></span>
                 <span class="o" t-field="o.partner_id.name"/><br/>
-                <span class="label"><strong>DIRECCION:</strong></span><br/>
+                <span class="label"><strong>DIRECCION:</strong></span> <span class="o" t-esc="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
                 <span class="label"><strong>CONDICIONES DE PAGO:</strong></span>
-                <!-- <t t-if="o.invoice_payment_term_id">
-                  <span class="o" t-field="o.invoice_payment_term_id.name" /><span>  </span><strong>Dias</strong>
+                <t t-if="o.payment_term_id">
+                  <span class="o" t-field="o.payment_term_id.name" /><span>  </span>
                 </t>
                 <t t-else="">
                   <span class="o" t-field="o.partner_id.property_supplier_payment_term_id.name" />
-                </t> -->
+                </t>
                 <br/>
                 <span class="label"><strong>FECHA FACTURA:</strong></span>
                 <span class="o" t-field="o.fecha_factura"/> <br/>
@@ -192,9 +192,9 @@
                 <span class="o" t-field="o.fecha_pago"/><br/>
                 <span class="label2"><strong>TOTAL PAGO:</strong></span>
                 <span class="o" t-field="o.amount_total"/><br/>
-                <span class="label2"><strong>DIA DE PAGO</strong></span>
+                <span class="label2"><strong>DIA DE PAGO:</strong></span>
                 <span class="o" t-field="o.company_id.dia_pago"/><br/>
-                <span class="label2"><strong>HORARIO DE PAGO</strong></span>
+                <span class="label2"><strong>HORARIO DE PAGO:</strong></span>
                 <span class="o" t-field="o.company_id.horario_pago"/>
               </div>
 
@@ -216,15 +216,16 @@
                           <img t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 100%;"/>
                         </div>
 
-                       <div class="contrapago" style ="margin-top: -100px;">
+                       <div class="contrapago" style="margin-top: -100px;">
+                         <br/>
                           <h2 style="font-size: 15px;"><strong>Contraseña No.</strong></h2>
                          <div class="contrapago-content">
-                            <span class="ref" t-field="o.name"/>
+                            <span style ="font-size: 25px;" class="ref" t-field="o.name"/>
                          </div>
                        </div>
                   </header>
 
-                <div class="encabezado">
+                <div class="encabezado"> 
                   <span><strong>CONTRASEÑA DE PAGO</strong></span><br/>
                   <span><strong>ACANTO, S.A.</strong></span>
                 </div>
@@ -233,14 +234,14 @@
               <div class="info1">
                 <span class="label"><strong>PROVEEDOR:</strong></span>
                 <span class="o" t-field="o.partner_id.name"/><br/>
-                <span class="label"><strong>DIRECCION:</strong></span><br/>
+                <span class="label"><strong>DIRECCION:</strong></span> <span class="o" t-esc="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
                 <span class="label"><strong>CONDICIONES DE PAGO:</strong></span>
-                <!-- <t t-if="o.invoice_payment_term_id">
-                  <span class="o" t-field="o.invoice_payment_term_id.name" /><span>  </span><strong>Dias</strong>
+                <t t-if="o.payment_term_id">
+                  <span class="o" t-field="o.payment_term_id.name" /><span>  </span>
                 </t>
                 <t t-else="">
                   <span class="o" t-field="o.partner_id.property_supplier_payment_term_id.name" />
-                </t> -->
+                </t>
                 <br/>
                 <span class="label"><strong>FECHA FACTURA:</strong></span>
                 <span class="o" t-field="o.fecha_factura"/> <br/>
@@ -270,9 +271,9 @@
                 <span class="o" t-field="o.fecha_pago"/><br/>
                 <span class="label2"><strong>TOTAL PAGO:</strong></span>
                 <span class="o" t-field="o.amount_total"/><br/>
-                <span class="label2"><strong>DIA DE PAGO</strong></span>
+                <span class="label2"><strong>DIA DE PAGO:</strong></span>
                 <span class="o" t-field="o.company_id.dia_pago"/><br/>
-                <span class="label2"><strong>HORARIO DE PAGO</strong></span>
+                <span class="label2"><strong>HORARIO DE PAGO:</strong></span>
                 <span class="o" t-field="o.company_id.horario_pago"/>
               </div>
 
