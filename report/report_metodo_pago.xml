@@ -52,7 +52,7 @@
                                 <td>
                                     <strong>La cantidad de:</strong>
                                     <t t-if="len(o.reconciled_bill_ids)>0">
-                                      <t t-esc="a_letras(o.reconciled_bill_ids[0].amount_total)"/>  Quetzales
+                                      <t t-esc="a_letras(o.reconciled_bill_ids[0].amount_total)"/>
                                     </t>
 
                                 </td>
@@ -106,7 +106,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2" style="width: 100%;">
-                                                <strong>La cantidad de:</strong> <t t-esc="a_letras(o.amount)"/> Quetzales
+                                                <strong>La cantidad de:</strong> <t t-esc="a_letras(o.amount)"/>
                                             </td>
                                         </tr>
                                         <tr>
