@@ -60,9 +60,18 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                     <strong>Factura:</strong> <t t-esc="o.ref"/>
+                                     <strong>Factura:</strong> 
+                                            <t t-if="o.reconciled_bill_ids">
+                                              <t t-esc="o.reconciled_bill_ids[0].fel_numero"/> - <t t-esc="o.reconciled_bill_ids[0].name"/>
+                                            </t>
                                 </td>
                             </tr>
+                            <tr>
+                                <td colspan="2">
+                                     <strong>Descripción:</strong> 
+                                     <span t-esc="o.descripcion"/>
+                                </td>
+                            </tr>                            
                             <tr>
                                 <td style="height: 30px;"></td>
                             </tr>
