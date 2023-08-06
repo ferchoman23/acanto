@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import api, models
-import re
 import datetime
 from datetime import date
 import logging
