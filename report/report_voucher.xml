@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="acanto.metodo_pago_report">
+    <template id="acanto.report_voucher">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-set="data_report_margin_top" t-value="12"/>
                 <t t-set="data_report_header_spacing" t-value="4"/>
-                <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
+                <t t-set="o" t-value="o.with_context(lang=user.lang)"/>
                 <div class="article">
                     <div class="page">
                         <div style="position: absolute; top: 0; left: 0;">
-                            <img class="logo" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" style="width: 25%;"/>
+                            <img class="logo" t-att-src="image_data_uri(user.company_id.logo)" alt="Logo" style="width: 25%;"/>
                         </div>
                         <h2 style="text-align: center;">Voucher de pago</h2>
                         <br/><br/><br/><br/><br/><br/>
@@ -22,20 +22,18 @@
                                     <table style="width: 100%;">
                                         <tr>
                                             <td style="text-align: left; padding-left: 160px;">
-                                                <strong>Fecha:</strong> <t t-esc="o.date"/>
+                                                <strong>Fecha:</strong> <t t-esc="o.fecha"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left; padding-left: 160px;">
-                                                <strong>Voucher No:</strong> <t t-esc="o.name"/>
+                                                <strong>Voucher No:</strong> <t t-esc="o.voucher_no"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left; padding-left: 160px;">
                                                 <strong>Cantidad:</strong>
-                                                <t t-if="len(o.reconciled_bill_ids)>0">
-                                                  <t t-esc="o.reconciled_bill_ids[0].amount_total"  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
-                                                </t>
+                                                  <t t-esc="o.cantidad_cheque"  t-options='{"widget": "monetary", "display_currency": user.company_id.currency_id}'/>
 
                                             </td>
                                         </tr>
@@ -44,16 +42,14 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <strong>Recibimos de:</strong> <t t-esc="o.company_id.name"/>
+                                    <strong>Recibimos de:</strong> <t t-esc="o.recibimos_id.name"/>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>
                                     <strong>La cantidad de:</strong>
-                                    <t t-if="len(o.reconciled_bill_ids)>0">
-                                      <t t-esc="a_letras(o.reconciled_bill_ids[0].amount_total)"/>
-                                    </t>
+                                      <t t-esc="a_letras(o.cantidad_pago)"/> 
 
                                 </td>
                                 <td></td>
@@ -61,9 +57,7 @@
                             <tr>
                                 <td colspan="2">
                                      <strong>Factura:</strong> 
-                                            <t t-if="o.reconciled_bill_ids">
-                                              <t t-esc="o.reconciled_bill_ids[0].fel_numero"/> - <t t-esc="o.reconciled_bill_ids[0].name"/>
-                                            </t>
+                                              <t t-esc="o.factura"/>
                                 </td>
                             </tr>
                             <tr>
@@ -91,15 +85,15 @@
                                     <table style="width: 100%;">
                                         <tr>
                                             <td style="width: 50%;">
-                                                <strong>Banco:</strong> <t t-esc="o.journal_id.bank_account_id.bank_id.name"/>
+                                                <strong>Banco:</strong> <t t-esc="o.banco_id.name"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="width: 50%;">
-                                                <strong>Cuenta No:</strong> <t t-esc="o.journal_id.bank_account_id.acc_number"/>
+                                                <strong>Cuenta No:</strong> <t t-esc="o.banco_id.bank_account_id.acc_number"/>
                                             </td>
                                             <td style="width: 50%; padding-left: 160px;">
-                                                <strong>No:</strong> <t t-esc="o.correlative_checkbook"/>
+                                                <strong>No:</strong> <t t-esc="o.cheque_no"/>
                                             </td>
                                         </tr>
                                         <tr>
@@ -107,15 +101,15 @@
                                         </tr>
                                         <tr>
                                             <td style="width: auto%;">
-                                                <strong>A la orden de:</strong> <t t-esc="o.partner_id.name"/>
+                                                <strong>A la orden de:</strong> <t t-esc="o.orden"/>
                                             </td>
                                             <td style="width: 50%; padding-left: 160px;">
-                                                <strong>Cantidad:</strong> <t t-esc="o.amount"  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                <strong>Cantidad:</strong> <t t-esc="o.cantidad_cheque"  t-options='{"widget": "monetary", "display_currency": user.company_id.currency_id}'/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan="2" style="width: 100%;">
-                                                <strong>La cantidad de:</strong> <t t-esc="a_letras(c.amount)"/>
+                                                <strong>La cantidad de:</strong> <t t-esc="a_letras(o.cantidad_cheque)"/>
                                             </td>
                                         </tr>
                                         <tr>
@@ -129,13 +123,13 @@
                         <table style="width: 100%;">
                             <tr>
                                 <td style="width: 33%; text-align: center;">
-                                    <strong>Elaborado por:</strong><span t-field="request.env.user.name"/>
+                                    <strong>Elaborado por:</strong><span t-field="user.name"/>
                                 </td>
                                 <td style="width: 33%; text-align: center;">
-                                    <strong>Autorizado por:</strong> <t t-esc="o.autorizado_por"/>
+                                    <strong>Autorizado por:</strong> <t t-esc="o.autorizado"/>
                                 </td>
                                 <td style="width: 33%; text-align: center;">
-                                    <strong>Recibido por:</strong> <t t-esc="o.recibido_por"/>
+                                    <strong>Recibido por:</strong> <t t-esc="o.recibido"/>
                                 </td>
                             </tr>
                         </table>

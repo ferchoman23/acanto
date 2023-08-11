@@ -22,7 +22,10 @@
         'report/report_metodo_pago.xml',
         'views/sale_order_views.xml',
         'views/ir_actions_report_templates.xml',
+        'report/report_voucher.xml',
         'views/report.xml',
+        'views/acanto_view.xml',
+        'security/ir.model.access.csv',
     ],
     'demo': [
     ],
